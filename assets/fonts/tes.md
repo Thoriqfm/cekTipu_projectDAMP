@@ -1,1 +1,1 @@
-jemboed memk
+mohon dijaga tutur katanya
