@@ -1,0 +1,20 @@
+:root {
+    /* Primary */
+    --color-primary: #0F62FE;
+    --color-btn-primary: #0F62FE;
+
+    /* Neutral */
+    --color-navbar: #262626;
+    --color-bg: #161616;
+    --color-asset: #C6C6C6;
+    --color-shading: #6F6F6F;
+
+    /* Text */
+    --color-text-white: #FFFFFF;
+    --color-text-black: #000000;
+
+    /* Status */
+    --color-success: #42BE65;
+    --color-warning: #F1C21B;
+    --color-danger: #FA4D56;
+}
