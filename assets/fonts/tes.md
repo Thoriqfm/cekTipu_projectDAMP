@@ -1,0 +1,1 @@
+mohon dijaga tutur katanya
