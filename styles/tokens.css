@@ -1,5 +1,13 @@
 @font-face {
     font-family: 'SF Pro Display';
+    src: url('../assets/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
     src: url('../assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
@@ -20,6 +28,7 @@
     --font-family: 'SF Pro Display', sans-serif;
 
     /* Font Weight */
+    --font-regular: 400;
     --font-medium: 500;
     --font-bold: 700;
 
@@ -50,9 +59,16 @@
     --leading-footnote: 1.125rem; /* 18px */
     --leading-caption: 1rem; /* 16px */
 
+    /* Letter Spacing */
+    --tracking-tight: -0.03em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.01em;
+    --tracking-wider: 0.2em;
+
     /* Primary */
     --color-primary: #0F62FE;
     --color-btn-primary: #0F62FE;
+    --color-btn-signin: #0354A6;
 
     /* Neutral */
     --color-navbar: #262626;
