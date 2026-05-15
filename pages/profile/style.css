@@ -77,6 +77,176 @@ body {
     border: none;
     border-top: 3px solid var(--color-asset);
     margin-top: 78px;
+    margin-bottom: 82px;
     border-radius: 50px;
     opacity: 80%;
+}
+
+/* History Container */
+
+/* History */
+.history-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.history-header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Filter button */
+.history-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 31px;
+}
+
+.filter-btn {
+    font-family: var(--font-primary);
+    font-size: var(--text-footnote);
+    font-weight: var(--font-medium);
+    color: var(--color-shading);
+    background: transparent;
+    border: 1px solid var(--color-shading);
+    border-radius: 999px;
+    padding: 4px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.filter-btn.active {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Scrollable list */
+.history-list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 16px;
+}
+
+.history-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Scrollbar styling */
+/* .history-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: var(--color-shading);
+    border-radius: 999px;
+} */
+
+.custom-scrollbar {
+    width: 4px;
+    background: transparent;
+    position: relative;
+    height: 380px;
+    flex-shrink: 0;
+}
+
+.custom-thumb {
+    width: 4px;
+    height: 380px;
+    background: var(--color-asset);
+    border-radius: 999px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.1s ease;
+}
+
+/* Card */
+.history-list-wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.history-list {
+    flex: 1;
+}
+
+.history-content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-text-white);
+    border-radius: 30px;
+    padding: 40px 40px 180px 40px;
+}
+
+.history-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-bg-history);
+    border-radius: 25px;
+    padding: 16px 20px 20px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.history-card:hover {
+    background-color: #e8e8e8;
+}
+
+.history-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.history-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.history-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-card-arrow {
+    font-size: 20px;
+    color: var(--color-shading);
+    margin-left: 12px;
+}
+
+.badge--safe {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.badge--high {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.badge--medium {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
 }
