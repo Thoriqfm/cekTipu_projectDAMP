@@ -135,7 +135,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    max-height: 380px;
+    max-height: 520px;
     overflow-y: auto;
     padding-right: 16px;
 }
@@ -143,20 +143,6 @@ body {
 .history-list::-webkit-scrollbar {
     display: none;
 }
-
-/* Scrollbar styling */
-/* .history-list::-webkit-scrollbar {
-    width: 4px;
-}
-
-.history-list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.history-list::-webkit-scrollbar-thumb {
-    background: var(--color-shading);
-    border-radius: 999px;
-} */
 
 .custom-scrollbar {
     width: 4px;
@@ -193,7 +179,7 @@ body {
     flex-direction: column;
     background-color: var(--color-text-white);
     border-radius: 30px;
-    padding: 40px 40px 180px 40px;
+    padding: 40px 40px 160px 40px;
 }
 
 .history-card {
