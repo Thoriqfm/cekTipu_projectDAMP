@@ -134,30 +134,32 @@ body {
 /* Filter button */
 .history-filter {
     display: flex;
-    gap: 8px;
-    margin-bottom: 31px;
+    gap: 24px;
+    margin-bottom: 20px;
 }
 
 .filter-btn {
     font-family: var(--font-primary);
-    font-size: var(--text-footnote);
+    font-size: var(--text-subhead);
     font-weight: var(--font-medium);
     color: var(--color-shading);
-    background: transparent;
-    border: 1px solid var(--color-shading);
+    background: color-mix(in srgb, var(--color-shading) 15%, transparent);
+    border: 2px solid var(--color-shading);
     border-radius: 999px;
-    padding: 4px 16px;
+    width: 80px;
+    padding: 6px 0;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .filter-btn:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
     border-color: var(--color-primary);
     color: var(--color-primary);
 }
 
 .filter-btn.active {
-    background-color: transparent;
+    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
     border-color: var(--color-primary);
     color: var(--color-primary);
 }
