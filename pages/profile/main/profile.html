@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
 
-    <link rel="stylesheet" href="../../styles/tokens.css">
-    <link rel="stylesheet" href="../../styles/typography.css">
-    <link rel="stylesheet" href="../../styles/components.css">
-    <link rel="stylesheet" href="../../components/navbar/style.css">
+    <link rel="stylesheet" href="../../../styles/tokens.css">
+    <link rel="stylesheet" href="../../../styles/typography.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="../../../components/navbar/style.css">
+    <link rel="stylesheet" href="animate.css">
+
 </head>
 <body>
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+    <div class="glow glow--3"></div>
     <div id="navbar"></div>
 
-    <div class="profile-title">
+    <div class="profile-title fade-down" style="animation-delay: 0s;">
         <h1 class="text-xl-title1">Profile.</h1>
     </div>
     <div class="profile-content">
 
-        <div class="profile-info">
+        <div class="profile-info fade-scale" style="animation-delay: 0s;">
             <div class="profile-card">
                 <!-- Avatar -->
                 <div class="profile-avatar">
-                    <img src="../../assets/images/avatar.png" alt="Profile Picture">
+                    <img src="../../../assets/images/avatar.png" alt="Profile Picture">
                 </div>
 
                 <!-- Detail -->
@@ -50,7 +55,7 @@
 
         <hr class="divider">
 
-        <div class="history-content">
+        <div class="history-content fade-in" style="animation-delay: 0s;">
 
             <!-- Header & Filter -->
             <div class="history-header">
@@ -58,8 +63,8 @@
                 <div class="history-filter">
                     <button class="filter-btn active">All</button>
                     <button class="filter-btn">Safe</button>
-                    <button class="filter-btn">High</button>
                     <button class="filter-btn">Medium</button>
+                    <button class="filter-btn">High</button>
                 </div>
             </div>
 
@@ -67,56 +72,84 @@
             <div class="history-list-wrapper">
                 <div class="history-list" id="historyList">
 
-                <div class="history-card">
+                <div class="history-card" data-status="safe">
                     <div class="history-card-main">
                         <div class="history-card-text">
                             <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
                             <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                         </div>
                         <div class="history-card-meta">
-                            <span class="text-subhead badge--safe">Safe</span>
+                            <span class="text-subheadline badge--safe">Safe</span>
                             <span class="text-caption" style="color: var(--color-shading);">1 hours ago</span>
                         </div>
                     </div>
                     <span class="history-card-arrow">›</span>
                 </div>
 
-                <div class="history-card">
+                <div class="history-card" data-status="high">
                     <div class="history-card-main">
                         <div class="history-card-text">
                             <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
                             <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                         </div>
                         <div class="history-card-meta">
-                            <span class="text-subhead badge--high">High</span>
+                            <span class="text-subheadline badge--high">High</span>
                             <span class="text-caption" style="color: var(--color-shading);">3 day ago</span>
                         </div>
                     </div>
                     <span class="history-card-arrow">›</span>
                 </div>
 
-                <div class="history-card">
+                <div class="history-card" data-status="medium">
                     <div class="history-card-main">
                         <div class="history-card-text">
                             <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
                             <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                         </div>
                         <div class="history-card-meta">
-                            <span class="text-subhead badge--medium">Medium</span>
+                            <span class="text-subheadline badge--medium">Medium</span>
                             <span class="text-caption" style="color: var(--color-shading);">7 day ago</span>
                         </div>
                     </div>
                     <span class="history-card-arrow">›</span>
                 </div>
 
-                <div class="history-card">
+                <div class="history-card" data-status="high">
                     <div class="history-card-main">
                         <div class="history-card-text">
                             <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
                             <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                         </div>
                         <div class="history-card-meta">
-                            <span class="text-subhead badge--high">High</span>
+                            <span class="text-subheadline badge--high">High</span>
+                            <span class="text-caption" style="color: var(--color-shading);">1 month ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="high">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--high">High</span>
+                            <span class="text-caption" style="color: var(--color-shading);">1 month ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="high">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--high">High</span>
                             <span class="text-caption" style="color: var(--color-shading);">1 month ago</span>
                         </div>
                     </div>
@@ -132,11 +165,11 @@
         </div>
 
     </div>
-    <script src="../../js/utils.js"></script>
+    <script src="../../../js/utils.js"></script>
     <script>
-        window.componentDepth = '../../';
+        window.componentDepth = '../../../';
     </script>
-    <script src="../../js/components.js"></script>
+    <script src="../../../js/components.js"></script>
     <script src="profile.js"></script>
 </body>
 </html>

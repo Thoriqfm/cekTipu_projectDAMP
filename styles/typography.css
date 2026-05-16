@@ -68,6 +68,13 @@
     font-weight: var(--font-medium);
 }
 
+.text-subheadline {
+    font-family: var(--font-primary);
+    font-size: var(--text-subheadline);
+    line-height: var(--leading-subheadline);
+    font-weight: var(--font-medium);
+}
+
 .text-footnote {
     font-family: var(--font-primary);
     font-size: var(--text-footnote);
