@@ -3,7 +3,6 @@
     font-size: var(--text-xl-title1);
     line-height: var(--leading-xl-title1);
     font-weight: var(--font-bold);
-    letter-spacing: var(--tracking-wider);
 }
 
 .text-xl-title2 {
@@ -11,7 +10,6 @@
     font-size: var(--text-xl-title2);
     line-height: var(--leading-xl-title2);
     font-weight: var(--font-bold);
-    letter-spacing: var(--tracking-wider);
 }  
 
 .text-large-title {
@@ -67,6 +65,13 @@
     font-family: var(--font-primary);
     font-size: var(--text-subhead);
     line-height: var(--leading-subhead);
+    font-weight: var(--font-medium);
+}
+
+.text-subheadline {
+    font-family: var(--font-primary);
+    font-size: var(--text-subheadline);
+    line-height: var(--leading-subheadline);
     font-weight: var(--font-medium);
 }
 
