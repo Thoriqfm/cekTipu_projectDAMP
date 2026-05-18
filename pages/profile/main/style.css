@@ -2,14 +2,17 @@ body {
     background-color: var(--color-bg);
     position: relative;
     overflow-x: hidden;
-    /* overflow-y: clip; */
+}
+
+.history-card {
+    cursor: pointer;
 }
 
 .glow {
     position: absolute;
     width: 1800px;
     height: 1800px;
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 20%, transparent 50%);
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 20%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
