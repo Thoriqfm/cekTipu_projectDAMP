@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cek Tipu - Pilih Paket Perlindunganmu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(ellipse at 50% 0%, #2a2a3a 0%, #1a1a22 40%, #111118 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17,17,24,0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .logo span {
+      color: #4a9eff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 48px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .btn-signin {
+      background: #4a9eff;
+      color: #fff;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-signin:hover { background: #3a8ef0; }
+
+    /* HERO TEXT */
+    .hero {
+      text-align: center;
+      padding: 72px 20px 56px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+    .hero p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* PRICING CARDS */
+    .pricing-grid {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 60px 80px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .card {
+      background: #1e1e28;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 32px 28px 36px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    /* Free card is slightly dimmer */
+    .card.free {
+      opacity: 0.65;
+    }
+
+    .card-tier {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 14px;
+    }
+
+    .card-price {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 20px;
+    }
+
+    .features {
+      list-style: none;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .features li::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23aaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2.5 8l4 4 7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      flex-shrink: 0;
+    }
+
+    .btn-subscribe {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.45);
+      padding: 11px 0;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, border-color 0.2s;
+      margin-top: auto;
+    }
+    .btn-subscribe:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="logo" href="#">cek <span>tipu</span></a>
+    <ul class="nav-links">
+      <li><a href="#">Homepage</a></li>
+      <li><a href="#">Forum</a></li>
+      <li><a href="#">Subscription</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+    <button class="btn-signin">Sign In</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Pilih Paket Perlindunganmu</h1>
+    <p>Tingkatkan keamanan digitalmu dengan fitur forensik lanjutan dan pemindaian tanpa batas</p>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-grid">
+
+    <!-- FREE -->
+    <div class="card free">
+      <div class="card-tier">Free</div>
+      <div class="card-desc">Lorem Ipsum Dolor Sit Amet</div>
+      <div class="card-price">IDR 0.00</div>
+      <hr class="divider"/>
+      <ul class="features">
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+      </ul>
+    </div>
+
+    <!-- PRO -->
+    <div class="card">
+      <div class="card-tier">Pro</div>
+      <div class="card-desc">Lorem Ipsum Dolor Sit Amet</div>
+      <div class="card-price">IDR 889.000.00</div>
+      <hr class="divider"/>
+      <ul class="features">
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+      </ul>
+      <button class="btn-subscribe">Langganan</button>
+    </div>
+
+    <!-- MAX -->
+    <div class="card">
+      <div class="card-tier">Max</div>
+      <div class="card-desc">Lorem Ipsum Dolor Sit Amet</div>
+      <div class="card-price">IDR 2.550.000.00</div>
+      <hr class="divider"/>
+      <ul class="features">
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+        <li>Dapet Jokowi</li>
+      </ul>
+      <button class="btn-subscribe">Langganan</button>
+    </div>
+
+  </section>
+
+</body>
+</html>
