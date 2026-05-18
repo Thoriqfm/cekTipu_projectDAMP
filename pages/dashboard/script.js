@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const analysisSection = document.getElementById('analysis-section');
   const sectionUpload = document.getElementById('section-upload');
 
+  // Elemen untuk efek 3D parallax
+  const sectionHero = document.querySelector('.section-hero');
+  const heroBug = document.querySelector('.hero-bug');
+
   // Hero Section "Mulai Pengecekan" Button Scroll
   if (btnHeroMulai) {
     btnHeroMulai.addEventListener('click', () => {
@@ -114,4 +118,30 @@ document.addEventListener('DOMContentLoaded', () => {
       analysisSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
+
+  // 3D effect for hero-bug
+  if (sectionHero && heroBug) {
+
+      sectionHero.addEventListener('mousemove', (e) => {
+      const rect = sectionHero.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      
+      const offsetX = (e.clientX - centerX) / (rect.width / 2);
+      const offsetY = (e.clientY - centerY) / (rect.height / 2);
+
+      
+      const rotateX = -offsetY * 40;
+      const rotateY =  offsetX * 40;
+
+      heroBug.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    // Reset mouse
+    sectionHero.addEventListener('mouseleave', () => {
+      heroBug.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  }
+
 });
