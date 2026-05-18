@@ -4,217 +4,234 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cek Tipu - Pilih Paket Perlindunganmu</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="../../../styles/tokens.css">
+  <link rel="stylesheet" href="../../../styles/typography.css">
+  <link rel="stylesheet" href="../../../components/navbar/style.css">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(ellipse at 50% 0%, #2a2a3a 0%, #1a1a22 40%, #111118 100%);
+      font-family: var(--font-primary);
+      background-color: #161616;
       min-height: 100vh;
-      color: #fff;
+      color: var(--color-text-white);
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 60px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(17,17,24,0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+    /* ── SHADING LAYER (kiri atas & kanan bawah) ── */
+    .shading-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 65% at -5% -5%,
+          rgba(180, 180, 190, 0.42) 0%,
+          rgba(140, 140, 155, 0.22) 35%,
+          rgba(80,  80,  95, 0.08) 60%,
+          transparent 75%
+        ),
+        radial-gradient(ellipse 70% 65% at 105% 105%,
+          rgba(180, 180, 190, 0.42) 0%,
+          rgba(140, 140, 155, 0.22) 35%,
+          rgba(80,  80,  95, 0.08) 60%,
+          transparent 75%
+        );
     }
 
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.5px;
-      text-decoration: none;
-    }
-    .logo span {
-      color: #4a9eff;
-    }
+    /* ── NAVBAR ── */
+    #navbar { position: relative; z-index: 100; }
 
-    .nav-links {
-      display: flex;
-      gap: 48px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.75);
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #fff; }
-
-    .btn-signin {
-      background: #4a9eff;
-      color: #fff;
-      border: none;
-      padding: 9px 22px;
-      border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .btn-signin:hover { background: #3a8ef0; }
-
-    /* HERO TEXT */
-    .hero {
+    /* ── HERO ── */
+    .pricing-hero {
       text-align: center;
-      padding: 72px 20px 56px;
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 14px;
-      letter-spacing: -0.5px;
-    }
-    .hero p {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.55);
+      padding: 72px 24px 52px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* PRICING CARDS */
+    .pricing-hero h1 {
+      color: var(--color-text-white);
+      margin-bottom: 12px;
+    }
+
+    .pricing-hero p {
+      color: var(--color-shading);
+    }
+
+    /* ── GRID ── */
     .pricing-grid {
       display: flex;
       justify-content: center;
+      align-items: stretch;
       gap: 24px;
       padding: 0 60px 80px;
       flex-wrap: wrap;
-      align-items: stretch;
+      position: relative;
+      z-index: 1;
     }
 
-    .card {
-      background: #1e1e28;
-      border: 1px solid rgba(255,255,255,0.1);
+    /* ── CARD ── */
+    .pricing-card {
+      /* abu-abu gelap murni, tanpa hint ungu/biru */
+      background: #222222;
+      border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: 16px;
       padding: 32px 28px 36px;
       width: 300px;
       display: flex;
       flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      /* Biar shading tembus ke card */
       position: relative;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.2);
+      overflow: hidden;
     }
 
-    /* Free card is slightly dimmer */
-    .card.free {
-      opacity: 0.65;
+    /* Shading overlay DALAM card — kiri atas */
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(ellipse at 0% 0%,
+        rgba(200, 200, 210, 0.13) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Shading overlay DALAM card — kanan bawah */
+    .pricing-card::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(ellipse at 100% 100%,
+        rgba(200, 200, 210, 0.10) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* konten card di atas overlay */
+    .pricing-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .pricing-card.free {
+      opacity: 0.52;
     }
 
     .card-tier {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.60);
+      margin-bottom: 4px;
     }
 
     .card-desc {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 14px;
+      color: rgba(255, 255, 255, 0.38);
+      margin-bottom: 12px;
     }
 
     .card-price {
-      font-size: 1.75rem;
-      font-weight: 700;
+      color: var(--color-text-white);
       margin-bottom: 20px;
-      letter-spacing: -0.5px;
     }
 
-    .divider {
+    .card-divider {
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
       margin-bottom: 20px;
     }
 
-    .features {
+    /* ── FEATURES ── */
+    .feature-list {
       list-style: none;
-      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      flex: 1;
       margin-bottom: 32px;
     }
-    .features li {
+
+    .feature-list li {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.78);
     }
-    .features li::before {
+
+    .feature-list li::before {
       content: '';
       display: inline-block;
       width: 16px;
       height: 16px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23aaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M2.5 8l4 4 7-7'/%3E%3C/svg%3E");
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23999999' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' d='M2.5 8l4 4 7-7'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-size: contain;
-      flex-shrink: 0;
     }
 
+    /* ── BUTTON ── */
     .btn-subscribe {
+      font-family: var(--font-primary);
+      font-size: var(--text-footnote);
+      font-weight: var(--font-medium);
+      color: var(--color-text-white);
       background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.45);
-      padding: 11px 0;
+      border: 1px solid rgba(255, 255, 255, 0.38);
       border-radius: 8px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      cursor: pointer;
+      padding: 11px 0;
       width: 100%;
-      letter-spacing: 0.3px;
-      transition: background 0.2s, border-color 0.2s;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
       margin-top: auto;
     }
+
     .btn-subscribe:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.7);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.65);
     }
   </style>
 </head>
 <body>
 
+  <!-- SHADING LAYER -->
+  <div class="shading-layer"></div>
+
   <!-- NAVBAR -->
-  <nav>
-    <a class="logo" href="#">cek <span>tipu</span></a>
-    <ul class="nav-links">
-      <li><a href="#">Homepage</a></li>
-      <li><a href="#">Forum</a></li>
-      <li><a href="#">Subscription</a></li>
-      <li><a href="#">Profile</a></li>
-    </ul>
-    <button class="btn-signin">Sign In</button>
-  </nav>
+  <div id="navbar"></div>
 
   <!-- HERO -->
-  <section class="hero">
-    <h1>Pilih Paket Perlindunganmu</h1>
-    <p>Tingkatkan keamanan digitalmu dengan fitur forensik lanjutan dan pemindaian tanpa batas</p>
+  <section class="pricing-hero">
+    <h1 class="text-xl-title2">Pilih Paket Perlindunganmu</h1>
+    <p class="text-subhead">Tingkatkan keamanan digitalmu dengan fitur forensik lanjutan dan pemindaian tanpa batas</p>
   </section>
 
-  <!-- PRICING -->
+  <!-- PRICING CARDS -->
   <section class="pricing-grid">
 
     <!-- FREE -->
-    <div class="card free">
-      <div class="card-tier">Free</div>
-      <div class="card-desc">Lorem Ipsum Dolor Sit Amet</div>
-      <div class="card-price">IDR 0.00</div>
-      <hr class="divider"/>
-      <ul class="features">
+    <div class="pricing-card free">
+      <div class="card-tier text-subhead">Free</div>
+      <div class="card-desc text-footnote">Lorem Ipsum Dolor Sit Amet</div>
+      <div class="card-price text-title1">IDR 0.00</div>
+      <hr class="card-divider"/>
+      <ul class="feature-list text-subhead">
         <li>Dapet Jokowi</li>
         <li>Dapet Jokowi</li>
         <li>Dapet Jokowi</li>
@@ -223,12 +240,12 @@
     </div>
 
     <!-- PRO -->
-    <div class="card">
-      <div class="card-tier">Pro</div>
-      <div class="card-desc">Lorem Ipsum Dolor Sit Amet</div>
-      <div class="card-price">IDR 889.000.00</div>
-      <hr class="divider"/>
-      <ul class="features">
+    <div class="pricing-card">
+      <div class="card-tier text-subhead">Pro</div>
+      <div class="card-desc text-footnote">Lorem Ipsum Dolor Sit Amet</div>
+      <div class="card-price text-title1">IDR 889.000.00</div>
+      <hr class="card-divider"/>
+      <ul class="feature-list text-subhead">
         <li>Dapet Jokowi</li>
         <li>Dapet Jokowi</li>
         <li>Dapet Jokowi</li>
@@ -240,12 +257,12 @@
     </div>
 
     <!-- MAX -->
-    <div class="card">
-      <div class="card-tier">Max</div>
-      <div class="card-desc">Lorem Ipsum Dolor Sit Amet</div>
-      <div class="card-price">IDR 2.550.000.00</div>
-      <hr class="divider"/>
-      <ul class="features">
+    <div class="pricing-card">
+      <div class="card-tier text-subhead">Max</div>
+      <div class="card-desc text-footnote">Lorem Ipsum Dolor Sit Amet</div>
+      <div class="card-price text-title1">IDR 2.550.000.00</div>
+      <hr class="card-divider"/>
+      <ul class="feature-list text-subhead">
         <li>Dapet Jokowi</li>
         <li>Dapet Jokowi</li>
         <li>Dapet Jokowi</li>
@@ -259,6 +276,11 @@
     </div>
 
   </section>
+
+  <script>
+    window.componentDepth = '../../../';
+  </script>
+  <script src="../../../js/components.js"></script>
 
 </body>
 </html>
