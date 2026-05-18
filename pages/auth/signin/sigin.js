@@ -1,4 +1,3 @@
-
 // TOGGLE SHOW/HIDE PASSWORD
 function togglePw(inputId, btn) {
   const inp = document.getElementById(inputId);
