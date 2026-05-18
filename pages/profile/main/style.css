@@ -9,7 +9,7 @@ body {
     position: absolute;
     width: 1800px;
     height: 1800px;
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 10%, transparent 50%);
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 20%, transparent 50%);
     pointer-events: none;
     z-index: 0;
 }
