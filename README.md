@@ -14,12 +14,10 @@ cekTipu/
 │   └── fonts/
 │
 ├── components/
-│   ├── navbar.html
-│   └── footer.html
+│   └── navbar.html
 │
 ├── js/
-│   ├── components.js
-│   └── utils.js
+│   └── components.js
 │
 ├── pages/
 │   ├── dashboard/
@@ -54,9 +52,7 @@ cekTipu/
 │
 ├── styles/
 │   ├── tokens.css
-│   ├── typography.css
-│   ├── components.css
-│   └── utilities.css
+│   └── typography.css
 │
 └── index.html
 ```
@@ -75,21 +71,13 @@ Menyimpan semua file statis.
 ### `components/`
 Berisi potongan HTML yang dipakai di lebih dari satu halaman. Tidak perlu tag `<html>`, `<head>`, atau `<body>` — langsung isinya saja.
 - `navbar.html` — navigasi utama
-- `footer.html` — footer utama
 
 ---
 
 ### `js/`
 Berisi JavaScript yang bersifat shared / dipakai semua halaman.
  
-- `components.js` — loader untuk inject `navbar.html` dan `footer.html` ke setiap halaman secara otomatis via `fetch`
-- `utils.js` — kumpulan fungsi helper bersama, antara lain:
-  - **Auth** — `isLoggedIn()`, `getUser()`, `saveUser()`, `logout()`, `requireAuth()`
-  - **Format** — `formatDate()`, `formatRelativeTime()`, `truncateText()`
-  - **DOM** — `$()`, `$$()`, `showElement()`, `hideElement()`, `showLoading()`
-  - **Toast** — `showToast(message, type)` untuk notifikasi
-  - **Validasi** — `isValidEmail()`, `isValidPassword()`, `isNotEmpty()`
-> Aturan: kalau satu fungsi dipakai di dua halaman atau lebih, taruh di `utils.js`. Kalau hanya dipakai di satu halaman, taruh di JS halaman itu sendiri.
+- `components.js` — loader untuk inject `navbar.html` ke setiap halaman secara otomatis via `fetch`
  
 ---
 
@@ -108,8 +96,6 @@ Design system bersama. **Jangan diubah seenaknya** — diskusi dulu kalau mau di
  
 - `tokens.css` — sumber kebenaran design system: CSS variables untuk warna, font, spacing, border radius
 - `typography.css` — aturan font-family, ukuran teks, line-height
-- `components.css` — styling shared components: `.btn`, `.card`, `.badge`, `.navbar`, `.footer`, dll
-- `utilities.css` — helper classes: `.text-center`, `.mt-md`, `.hidden`, dll
 
 ---
 
@@ -120,8 +106,8 @@ Halaman landing / root project. Titik masuk utama ketika pertama kali membuka pr
 
 ## Aturan Umum
  
-1. **Selalu import shared styles** di setiap halaman dengan urutan: `tokens.css` → `typography.css` → `components.css` → CSS halaman sendiri
-2. **Selalu load** `utils.js` dan `components.js` sebelum JS halaman sendiri
+1. **Selalu import shared styles** di setiap halaman dengan urutan: `tokens.css` → `typography.css` → CSS halaman sendiri
+2. **Selalu load** `components.js` sebelum JS halaman sendiri
 3. **Gunakan CSS variables** dari `tokens.css` saat styling, jangan hardcode nilai warna atau font
 4. **Folder `styles/` dan `js/`** adalah shared — koordinasi ke tim sebelum mengubah
 5. **Jalankan via Live Server** (VS Code extension) karena `components.js` menggunakan `fetch` yang tidak bisa jalan dari file lokal langsung
