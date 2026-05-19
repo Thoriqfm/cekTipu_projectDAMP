@@ -69,13 +69,18 @@ body {
     background-color: var(--color-text-white);
     border-radius: 25.317px;
     padding: 40px 50px 57px 64px;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Avatar */
 .profile-avatar {
     flex-shrink: 0;
-    width: 144px;
-    height: 144px;
+    width: 196px;
+    height: 196px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -94,7 +99,7 @@ body {
 }
 
 .profile-detail h2 {
-    color: var(--color-text-black);
+    color: var(--color-text-white);
     margin: 0;
 }
 
@@ -108,11 +113,11 @@ body {
     display: flex;
     align-items: center;
     gap: 16.12px;
-    color: var(--color-text-black);
+    color: var(--color-text-white);
 }
 
 .profile-meta-item span {
-    color: var(--color-shading);
+    color: var(--color-asset);
 }
 
 /* divider */
@@ -144,6 +149,7 @@ body {
 .history-filter {
     display: flex;
     gap: 24px;
+    margin-top: 32px;
     margin-bottom: 20px;
 }
 
@@ -151,9 +157,9 @@ body {
     font-family: var(--font-primary);
     font-size: var(--text-subhead);
     font-weight: var(--font-medium);
-    color: var(--color-shading);
+    color: var(--color-asset);
     background: color-mix(in srgb, var(--color-shading) 15%, transparent);
-    border: 2px solid var(--color-shading);
+    border: 2px solid var(--color-asset);
     border-radius: 999px;
     width: 80px;
     padding: 6px 0;
@@ -223,9 +229,13 @@ body {
 .history-content {
     display: flex;
     flex-direction: column;
-    background-color: var(--color-text-white);
     border-radius: 30px;
     padding: 40px 40px 160px 40px;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .history-card {
@@ -236,7 +246,13 @@ body {
     border-radius: 25px;
     padding: 16px 20px 20px 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Hover Effect for history card */
@@ -251,7 +267,8 @@ body {
 }
 
 .history-card:hover {
-    background-color: #e8e8e8;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .history-card-main {
