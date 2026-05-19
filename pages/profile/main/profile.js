@@ -71,3 +71,10 @@ list.addEventListener('scroll', () => {
         thumb.style.opacity = '0';
     }, 1000);
 });
+
+// Route
+document.querySelectorAll('.history-card').forEach(card => {
+    card.addEventListener('click', () => {
+        window.location.href = '../detail/detail.html';
+    })
+});

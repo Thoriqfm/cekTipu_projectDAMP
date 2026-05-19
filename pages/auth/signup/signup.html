@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="../../../styles/tokens.css">
+    <link rel="stylesheet" href="../../../styles/typography.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+    <!-- Glow -->
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+
+    <!-- Auth Wrapper -->
+    <div class="auth-wrapper">
+        <div class="auth-card fade-scale">
+
+            <!-- Icon -->
+            <div class="auth-icon">
+                <img src="../../../assets/images/out.png" alt="out" class="auth-out-icon">
+            </div>
+
+            <!-- Title -->
+            <h1 class="auth-title">Sign Up</h1>
+            <p class="auth-subtitle">Please Sign up before use our powerfull app</p>
+
+            <!-- Form -->
+            <div class="auth-form">
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Full Name <span class="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        class="form-input"
+                        placeholder="Enter your email or your phone number"
+                    />
+                </div>
+
+                <!-- Email or Phone -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Email or Phone number <span class="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="emailPhone"
+                        class="form-input"
+                        placeholder="Enter your email or your phone number"
+                    />
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Password <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <input
+                            type="password"
+                            id="password"
+                            class="form-input"
+                            placeholder="Enter password"
+                        />
+                        <button class="toggle-password" id="togglePassword" type="button" aria-label="Toggle password visibility">
+                            <img src="../../../assets/images/openeye.png" alt="show" class="eye-icon" id="eyeOpen">
+                            <img src="../../../assets/images/closeeye.png" alt="hide" class="eye-icon hidden" id="eyeClose">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sign Up Button -->
+                <button class="btn-primary" type="button" id="signupBtn">Sign up</button>
+
+                <!-- Divider -->
+                <div class="auth-divider">
+                    <span>or</span>
+                </div>
+
+                <!-- Google Button -->
+                <button class="btn-google" type="button">
+                    <img src="../../../assets/images/google.png" alt="Google" class="google-icon">
+                    Sign up with google
+                </button>
+
+                <!-- Footer -->
+                <p class="auth-footer">
+                    Already have account? <a href="../signin/signin.html" class="auth-link">Sign In Here</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../js/utils.js"></script>
+    <script>
+        window.componentDepth = '../../../';
+    </script>
+    <script src="../../../js/components.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>
