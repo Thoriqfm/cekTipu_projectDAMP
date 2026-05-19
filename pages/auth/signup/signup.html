@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign Up</title>
 
     <link rel="stylesheet" href="../../../styles/tokens.css">
     <link rel="stylesheet" href="../../../styles/typography.css">
@@ -18,12 +18,6 @@
     <div class="glow glow--1"></div>
     <div class="glow glow--2"></div>
 
-    <!-- Back Button -->
-    <a href="../signup/signup.html" class="back-btn">
-        <span class="back-arrow">&#8249;</span>
-        <span class="back-text">Back.</span>
-    </a>
-
     <!-- Auth Wrapper -->
     <div class="auth-wrapper">
         <div class="auth-card fade-scale">
@@ -34,11 +28,24 @@
             </div>
 
             <!-- Title -->
-            <h1 class="auth-title">Sign In</h1>
-            <p class="auth-subtitle">Sign In into your account MyProject</p>
+            <h1 class="auth-title">Sign Up</h1>
+            <p class="auth-subtitle">Please Sign up before use our powerfull app</p>
 
             <!-- Form -->
             <div class="auth-form">
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label class="form-label">
+                        Full Name <span class="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        class="form-input"
+                        placeholder="Enter your email or your phone number"
+                    />
+                </div>
 
                 <!-- Email or Phone -->
                 <div class="form-group">
@@ -63,20 +70,17 @@
                             type="password"
                             id="password"
                             class="form-input"
-                            placeholder="Enter your email or your phone number"
+                            placeholder="Enter password"
                         />
                         <button class="toggle-password" id="togglePassword" type="button" aria-label="Toggle password visibility">
                             <img src="../../../assets/images/openeye.png" alt="show" class="eye-icon" id="eyeOpen">
                             <img src="../../../assets/images/closeeye.png" alt="hide" class="eye-icon hidden" id="eyeClose">
                         </button>
                     </div>
-                    <div class="forget-password-wrapper">
-                        <a href="#" class="forget-link">Forget Password?</a>
-                    </div>
                 </div>
 
-                <!-- Sign In Button -->
-                <button class="btn-primary" type="button" id="signinBtn">Sign In</button>
+                <!-- Sign Up Button -->
+                <button class="btn-primary" type="button" id="signupBtn">Sign up</button>
 
                 <!-- Divider -->
                 <div class="auth-divider">
@@ -86,12 +90,12 @@
                 <!-- Google Button -->
                 <button class="btn-google" type="button">
                     <img src="../../../assets/images/google.png" alt="Google" class="google-icon">
-                    Sign In with google
+                    Sign up with google
                 </button>
 
                 <!-- Footer -->
                 <p class="auth-footer">
-                    Don't have account? <a href="../signup/signup.html" class="auth-link">Sign Up Here</a>
+                    Already have account? <a href="../signin/signin.html" class="auth-link">Sign In Here</a>
                 </p>
 
             </div>
@@ -103,6 +107,6 @@
         window.componentDepth = '../../../';
     </script>
     <script src="../../../js/components.js"></script>
-    <script src="signin.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>
