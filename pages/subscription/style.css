@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cek Tipu - Pilih Paket Perlindunganmu</title>
-
-  <link rel="stylesheet" href="../../../styles/tokens.css">
-  <link rel="stylesheet" href="../../../styles/typography.css">
-  <link rel="stylesheet" href="../../../components/navbar/style.css">
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: var(--font-primary);
@@ -206,81 +194,61 @@
       background: rgba(255, 255, 255, 0.07);
       border-color: rgba(255, 255, 255, 0.65);
     }
-  </style>
-</head>
-<body>
 
-  <!-- SHADING LAYER -->
-  <div class="shading-layer"></div>
+    /* For animation */
+    /* State awal, hidden card */
+    .pricing-card {
+        opacity: 0;
+        transform: translateY(40px);
+    }
 
-  <!-- NAVBAR -->
-  <div id="navbar"></div>
+    .pricing-card.visible {
+        animation: cardEntrance 0.6s ease forwards;
+    }
 
-  <!-- HERO -->
-  <section class="pricing-hero">
-    <h1 class="text-xl-title2">Pilih Paket Perlindunganmu</h1>
-    <p class="text-subhead">Tingkatkan keamanan digitalmu dengan fitur forensik lanjutan dan pemindaian tanpa batas</p>
-  </section>
+    @keyframes cardEntrance {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-  <!-- PRICING CARDS -->
-  <section class="pricing-grid">
+    /* For Free Card */
+    .pricing-card.free.visible {
+        animation: cardEntranceFree 0.6s ease forwards;
+    }
 
-    <!-- FREE -->
-    <div class="pricing-card free">
-      <div class="card-tier text-subhead">Free</div>
-      <div class="card-desc text-footnote">Lorem Ipsum Dolor Sit Amet</div>
-      <div class="card-price text-title1">IDR 0.00</div>
-      <hr class="card-divider"/>
-      <ul class="feature-list text-subhead">
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-      </ul>
-    </div>
+    @keyframes cardEntranceFree {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 0.52;
+            transform: translateY(0);
+        }
+    }
 
-    <!-- PRO -->
-    <div class="pricing-card">
-      <div class="card-tier text-subhead">Pro</div>
-      <div class="card-desc text-footnote">Lorem Ipsum Dolor Sit Amet</div>
-      <div class="card-price text-title1">IDR 889.000.00</div>
-      <hr class="card-divider"/>
-      <ul class="feature-list text-subhead">
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-      </ul>
-      <button class="btn-subscribe">Langganan</button>
-    </div>
+    .pricing-hero {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 
-    <!-- MAX -->
-    <div class="pricing-card">
-      <div class="card-tier text-subhead">Max</div>
-      <div class="card-desc text-footnote">Lorem Ipsum Dolor Sit Amet</div>
-      <div class="card-price text-title1">IDR 2.550.000.00</div>
-      <hr class="card-divider"/>
-      <ul class="feature-list text-subhead">
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-        <li>Dapet Jokowi</li>
-      </ul>
-      <button class="btn-subscribe">Langganan</button>
-    </div>
+    .pricing-hero {
+        animation: heroEntrance 0.7s ease forwards;
+    }
 
-  </section>
-
-  <script>
-    window.componentDepth = '../../../';
-  </script>
-  <script src="../../../js/components.js"></script>
-
-</body>
-</html>
+    @keyframes heroEntrance {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
