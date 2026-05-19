@@ -1,0 +1,441 @@
+/* Dashboard Base Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-white);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.text-white { color: var(--color-text-white); }
+.text-gray { color: var(--color-asset); }
+.text-primary { color: var(--color-primary); }
+.text-success { color: var(--color-success); }
+.text-center { text-align: center; }
+.mt-4 { margin-top: 32px; }
+
+.hidden { display: none !important; }
+
+/* Global Background Wrapper (Absolute, scrolls with page, cut off at edges) */
+.global-bg-wrapper {
+  position: absolute; /* Menempel di body dan ikut scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Penuhi tinggi dokumen asli */
+  z-index: -1; /* Di balik segalanya */
+  pointer-events: none;
+  overflow: hidden; /* Pastikan lingkaran terpotong */
+}
+
+/* Lingkaran super besar, digeser agar terpotong di tepi */
+.bg-lingkaran {
+  position: absolute;
+  opacity: 0.3;
+}
+
+.bg-lingkaran-left {
+  top: 0px;
+  left: -800px; /* Terpotong ekstrim di kiri */
+  width: 1600px;
+}
+
+.bg-lingkaran-right {
+  top: 800px;
+  right: -800px; /* Terpotong ekstrim di kanan */
+  width: 1600px;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Di atas background global */
+}
+
+/* ===========================
+   HERO SECTION (Halaman 1)
+   =========================== */
+.section-hero {
+  position: relative;
+  width: 100%;
+  min-height: 941px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 150px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Dihapus max-width 900px agar text heading memanjang satu baris */
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero-year {
+  margin-bottom: 24px; /* Padding direnggangkan */
+}
+
+.hero-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Jarak antara baris 1 dan 2 */
+  margin-bottom: 24px;
+}
+
+.hero-heading-row1 h1 {
+  white-space: nowrap; /* Memaksa 1 baris utuh */
+}
+
+.hero-heading-row2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.hero-inline-logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+.hero-subheading {
+  margin-bottom: 48px; /* Padding renggang */
+}
+
+.btn-outline-primary {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 12px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: rgba(15, 98, 254, 0.1);
+}
+
+.hero-bug {
+  margin-top: 80px; /* Renggang ke bawah */
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+
+  will-change: transform;
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+/* ===========================
+   UPLOAD SECTION (Halaman 2)
+   =========================== */
+.section-upload {
+  position: relative;
+  width: 100%;
+  min-height: 941px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 20px;
+}
+
+.upload-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 48px; /* Spasi longgar */
+}
+
+.upload-box-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Longgarkan jarak kotak input */
+}
+
+.input-url-box {
+  width: 100%;
+}
+
+.input-url {
+  width: 100%;
+  background: rgba(22, 22, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 16px 20px;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-url:focus {
+  border-color: var(--color-primary);
+}
+
+.drop-zone-box {
+  width: 100%;
+  height: 300px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(30, 30, 30, 0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.drop-zone-box:hover, .drop-zone-box.dragover {
+  background: rgba(40, 40, 40, 0.8);
+  border-color: var(--color-primary);
+}
+
+.upload-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid var(--color-text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.upload-icon-arrow {
+  font-size: 24px;
+  color: var(--color-text-white);
+}
+
+.btn-primary-small {
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 10px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-small:hover {
+  background: rgba(15, 98, 254, 0.1);
+}
+
+/* Upload Progress Box Baru */
+.upload-progress-state {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.progress-box {
+  width: 100%;
+  background: rgba(22, 22, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-file-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-icon {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%; /* Diupdate via JS */
+  background: var(--color-primary);
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+
+.progress-status-text {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+
+/* ===========================
+   ANALYSIS SECTION (Halaman 3)
+   =========================== */
+.section-analysis {
+  position: relative;
+  width: 100%;
+  min-height: 1571px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+.analysis-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Spasi longgar */
+}
+
+.analysis-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.analysis-section-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.icon-text {
+  font-size: 20px;
+  color: var(--color-primary);
+  filter: grayscale(100%) sepia(100%) hue-rotate(200deg) saturate(500%);
+}
+
+.mb-card {
+  margin-bottom: 48px; /* Lebih longgar */
+}
+
+.mt-section {
+  margin-top: 80px;
+}
+
+.intip-file-card {
+  width: 100%;
+  min-height: 500px;
+  background: rgba(30, 30, 30, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 32px;
+}
+
+.preview-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.findings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.finding-card {
+  padding: 32px 48px;
+  border-radius: 16px;
+  background: rgba(30, 30, 30, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.finding-card.recommendation {
+  background: rgba(15, 98, 254, 0.05);
+  border: 1px solid rgba(15, 98, 254, 0.3);
+  align-items: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero-heading-row2 {
+    flex-direction: column;
+  }
+  .finding-card {
+    padding: 24px;
+  }
+  .hero-heading-row1 h1, .hero-heading-row2 {
+    white-space: normal;
+  }
+}

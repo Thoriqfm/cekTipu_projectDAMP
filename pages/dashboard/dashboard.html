@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - CekTipu</title>
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/typography.css">
+  <link rel="stylesheet" href="../../components/navbar/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Latar belakang absolut (tidak fixed) agar ikut bergulir dan terpotong -->
+  <div class="global-bg-wrapper">
+    <img src="../../assets/images/dashboard/Lingkaran 3.png" alt="" class="bg-lingkaran bg-lingkaran-left">
+    <img src="../../assets/images/dashboard/Lingkaran.png" alt="" class="bg-lingkaran bg-lingkaran-right">
+  </div>
+
+  <div id="navbar"></div>
+
+  <main class="dashboard-container">
+    <!-- (Hero Section) -->
+    <section class="section-hero">
+      <div class="hero-content">
+        <h3 class="hero-year text-primary text-title1">Since 2026</h3>
+        
+        <!-- Dibuat tanpa max-width sempit agar menjadi satu line -->
+        <div class="hero-heading-container">
+          <div class="hero-heading-row1">
+            <h1 class="text-white text-xl-title1">Bantu kamu untuk terhindar dari penipuan</h1>
+          </div>
+          <div class="hero-heading-row2">
+            <img src="../../assets/images/dashboard/Logo.png" alt="Logo Cek Tipu" class="hero-inline-logo">
+            <h1 class="text-white text-xl-title1">dulu sebelum akses!</h1>
+          </div>
+        </div>
+        
+        <p class="hero-subheading text-gray text-title3">Cek pdf, dokumen, zip, file, link, semuanya!</p>
+        
+        <button class="btn-outline-primary text-headline" id="btn-hero-mulai">Mulai Pengecekan</button>
+        
+        <img src="../../assets/images/dashboard/Bug Assets.png" alt="Bug Illustration" class="hero-bug">
+      </div>
+    </section>
+
+    <!-- (Upload Section) -->
+    <section class="section-upload" id="section-upload">
+       <div class="upload-content">
+         <div class="upload-header">
+           <h2 class="text-primary text-xl-title2">Mulai Pengecekan</h2>
+           <p class="text-gray text-subhead">Masukkan link atau file kedalam section dibawah ini</p>
+         </div>
+         
+         <div class="upload-box-container" id="upload-box-container">
+            <div class="input-url-box">
+               <input type="url" id="url-input" class="input-url text-white text-body" placeholder="Input URL link here...">
+            </div>
+
+            <div class="drop-zone-box" id="drop-zone">
+               <div class="upload-icon-circle">
+                  <span class="upload-icon-arrow">↑</span>
+               </div>
+               <h3 class="text-white text-headline">Choose a file or drag & drop here</h3>
+               <p class="text-gray text-subheadline">JPEG, PNG, PDF and MP4 format, up to 60MB</p>
+               <button class="btn-primary-small text-subheadline" id="btn-select-file">Select file</button>
+               <input type="file" id="file-input" hidden>
+            </div>
+         </div>
+
+         <!-- Upload Progress Bar (Menggantikan Spinner bulat) -->
+         <div class="upload-progress-state hidden" id="upload-progress-state">
+           <div class="progress-box">
+              <div class="progress-header">
+                 <div class="progress-file-info">
+                    <span class="progress-icon text-white">📄 PDF</span>
+                    <span class="progress-file-name text-white text-headline" id="uploaded-file-name">document-name.pdf</span>
+                 </div>
+              </div>
+              <div class="progress-bar-container">
+                 <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                 </div>
+                 <div class="progress-status-text">
+                    <span id="progress-percentage" class="text-gray text-subheadline">0%</span>
+                    <span id="progress-done-indicator" class="hidden text-gray text-subheadline">Done <span class="text-success">✓</span></span>
+                 </div>
+              </div>
+           </div>
+           <!-- Tombol Lanjut (Muncul saat progress 100%) -->
+           <button class="btn-outline-primary hidden text-headline mt-4" id="btn-lanjut-analisis">Lihat Hasil Analisis</button>
+         </div>
+       </div>
+    </section>
+
+    <!-- Halaman 3 (Analysis Section) -->
+    <section class="section-analysis hidden" id="analysis-section">
+      <div class="analysis-header">
+        <h2 class="text-primary text-xl-title2">Hasil Analisis</h2>
+        <p class="text-gray text-subhead">Pemindaian selesai. Berikut adalah rincian dari file yang Anda unggah.</p>
+      </div>
+
+      <div class="analysis-content">
+        <!-- Intip File -->
+        <div class="analysis-section-title">
+           <h3 class="text-primary text-title1"><span class="icon-text">🔍</span> Intip File</h3>
+        </div>
+        <p class="text-gray text-subhead text-center mb-card">Ini adalah tampilan file apabila anda buka dan jalankan di perangkat anda</p>
+
+        <div class="intip-file-card">
+           <div class="preview-placeholder">
+               <p class="text-gray text-subheadline">File preview akan muncul di sini</p>
+           </div>
+        </div>
+
+        <!-- Penjelasan Penemuan -->
+        <div class="analysis-section-title mt-section">
+           <h3 class="text-primary text-title1"><span class="icon-text">📘</span> Penjelasan Penemuan</h3>
+        </div>
+        <p class="text-gray text-subhead text-center mb-card">Baca penjelasan dari penemuan kami</p>
+
+        <div class="findings-container">
+           <div class="finding-card">
+              <h3 class="text-primary text-headline">1. Modus Penyanderaan</h3>
+              <p class="text-white text-subheadline">Aplikasi ini adalah virus perusak. Ia bekerja secara diam-diam untuk mengunci (enkripsi) foto, video, dan dokumen skripsi/kerja Anda. Saat virus ini aktif, Anda tidak akan bisa membuka file apa pun sebelum membayar tebusan.</p>
+           </div>
+           
+           <div class="finding-card">
+              <h3 class="text-primary text-headline">2. Metode Pembayaran Ilegal</h3>
+              <p class="text-white text-subheadline">Penipu tidak menggunakan bank resmi karena takut rekeningnya diblokir. Mereka meminta pembayaran menggunakan <strong>Bitcoin</strong> agar transaksi mereka tidak terdeteksi dan tidak diblokir oleh pihak manapun</p>
+           </div>
+           
+           <div class="finding-card recommendation">
+              <h3 class="text-primary text-headline text-center">Saran Kami</h3>
+              <p class="text-white text-subheadline text-center">Kami telah menghancurkan file ini di server. Jika Anda terlanjur membukanya di tempat lain, segera putuskan koneksi internet dan jangan pernah membayar tebusan!</p>
+           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../../js/components.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

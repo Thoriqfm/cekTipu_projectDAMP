@@ -28,6 +28,21 @@
     animation: fadeScale 1s ease-out forwards;
 }
 
+@keyframes fadeScalesDivider {
+    from {
+        opacity: 0;
+        transform: scale(0.25);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-scale-divider {
+    animation: fadeScalesDivider 1.215s ease-out forwards;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
