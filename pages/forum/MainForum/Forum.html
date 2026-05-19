@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Cek Tipu</title>
+
+    <link rel="stylesheet" href="../../../styles/tokens.css">
+    <link rel="stylesheet" href="../../../styles/typography.css">
+    <link rel="stylesheet" href="../../../components/navbar/style.css">
+    <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+
+    <div id="navbar"></div>
+
+    <div class="forum-main-container">
+
+        <!-- ============ LEFT COLUMN ============ -->
+        <div class="forum-left-column">
+
+            <div class="forum-header">
+                <h1 class="forum-title text-xl-title1">Forum.</h1>
+                <select class="dropdown-filter">
+                    <option value="latest">Latest</option>
+                    <option value="popular">Popular</option>
+                    <option value="oldest">Oldest</option>
+                </select>
+            </div>
+
+            <div class="discussion-list">
+
+                <!-- Card 1 -->
+                <article class="discussion-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <div class="avatar-wrap">
+                                <img src="../../../assets/images/avatar.png" alt="Tjok o wie">
+                            </div>
+                            <div class="user-info">
+                                <div class="name-row">
+                                    <span class="user-name">Tjok o wie</span>
+                                    <span class="user-date">2 Mar 2026</span>
+                                </div>
+                                <span class="status-text">Telah ditemukan Ransomware bernama Penghoetang ransom</span>
+                            </div>
+                        </div>
+                        <button class="action-menu" aria-label="Opsi">⋮</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut justo eget urna suscipit vehicula. Cras iaculis mi quis magna euismod scelerisque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="participant-group">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <div class="avatar-sm avatar-more">+1</div>
+                        </div>
+                        <div class="reply-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>26 Replies</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="discussion-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <div class="avatar-wrap avatar-empty"></div>
+                            <div class="user-info">
+                                <div class="name-row">
+                                    <span class="user-name">Hamba Pehn At</span>
+                                    <span class="user-date">2 Mar 2026</span>
+                                </div>
+                                <span class="status-text">Telah ditemukan Virus Panafemok.apk</span>
+                            </div>
+                        </div>
+                        <button class="action-menu" aria-label="Opsi">⋮</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut justo eget urna suscipit vehicula. Cras iaculis mi quis magna euismod scelerisque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="participant-group">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <div class="avatar-sm avatar-more">+1</div>
+                        </div>
+                        <div class="reply-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>26 Replies</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 — with image -->
+                <article class="discussion-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <div class="avatar-wrap avatar-empty"></div>
+                            <div class="user-info">
+                                <div class="name-row">
+                                    <span class="user-name">Rus Die</span>
+                                    <span class="user-date">2 Mar 2026</span>
+                                </div>
+                                <span class="status-text">Telah ditemukan file virus bernama Sukilasi.iso</span>
+                            </div>
+                        </div>
+                        <button class="action-menu" aria-label="Opsi">⋮</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut justo eget urna suscipit vehicula. Cras iaculis mi quis magna euismod scelerisque.</p>
+                        <img src="../../../assets/images/malware.png" alt="Malware" class="card-image">
+                    </div>
+                    <div class="card-footer">
+                        <div class="participant-group">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <div class="avatar-sm avatar-more">+1</div>
+                        </div>
+                        <div class="reply-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>26 Replies</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="discussion-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <div class="avatar-wrap avatar-empty"></div>
+                            <div class="user-info">
+                                <div class="name-row">
+                                    <span class="user-name">Kim Gyat Twot</span>
+                                    <span class="user-date">2 Mar 2026</span>
+                                </div>
+                                <span class="status-text">Telah ditemukan file virus bernama Ciyetteri.pdf</span>
+                            </div>
+                        </div>
+                        <button class="action-menu" aria-label="Opsi">⋮</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut justo eget urna suscipit vehicula. Cras iaculis mi quis magna euismod scelerisque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="participant-group">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <div class="avatar-sm avatar-more">+1</div>
+                        </div>
+                        <div class="reply-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>26 Replies</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="discussion-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <div class="avatar-wrap avatar-empty"></div>
+                            <div class="user-info">
+                                <div class="name-row">
+                                    <span class="user-name">M. Abdurohim</span>
+                                    <span class="user-date">2 Mar 2026</span>
+                                </div>
+                                <span class="status-text">Telah ditemukan file Virus disisipkan dalam KTPOpenSource.png</span>
+                            </div>
+                        </div>
+                        <button class="action-menu" aria-label="Opsi">⋮</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut justo eget urna suscipit vehicula. Cras iaculis mi quis magna euismod scelerisque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="participant-group">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <div class="avatar-sm avatar-more">+1</div>
+                        </div>
+                        <div class="reply-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>26 Replies</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="discussion-card">
+                    <div class="card-top">
+                        <div class="user-meta">
+                            <div class="avatar-wrap avatar-empty"></div>
+                            <div class="user-info">
+                                <div class="name-row">
+                                    <span class="user-name">Buna Ted Dye</span>
+                                    <span class="user-date">2 Mar 2026</span>
+                                </div>
+                                <span class="status-text">Telah ditemukan Trojan Horse bernama SesikalssBebas.trojan</span>
+                            </div>
+                        </div>
+                        <button class="action-menu" aria-label="Opsi">⋮</button>
+                    </div>
+                    <div class="card-body">
+                        <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut justo eget urna suscipit vehicula. Cras iaculis mi quis magna euismod scelerisque.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="participant-group">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <img src="../../../assets/images/avatar.png" class="avatar-sm" alt="">
+                            <div class="avatar-sm avatar-more">+1</div>
+                        </div>
+                        <div class="reply-count">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span>26 Replies</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- ============ RIGHT COLUMN ============ -->
+        <div class="forum-right-column">
+
+            <button class="btn-start" id="btnStartDiscussion">Start New Discussion</button>
+
+            <!-- Topics -->
+            <div class="widget-box">
+                <ul class="topic-list" id="topicList">
+                    <li class="topic-item active" data-topic="all">
+                        <span class="dot"></span>
+                        <span class="topic-name">All Discussion</span>
+                        <svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                    </li>
+                    <li class="topic-item" data-topic="ransomware"><span class="dot"></span><span class="topic-name">Ransomware</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                    <li class="topic-item" data-topic="virus"><span class="dot"></span><span class="topic-name">Virus</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                    <li class="topic-item" data-topic="trojan"><span class="dot"></span><span class="topic-name">Trojan Horse</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                    <li class="topic-item" data-topic="phishing"><span class="dot"></span><span class="topic-name">Phishing</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                    <li class="topic-item" data-topic="spyware"><span class="dot"></span><span class="topic-name">Spyware</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                    <li class="topic-item" data-topic="adware"><span class="dot"></span><span class="topic-name">Adware</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                    <li class="topic-item" data-topic="worm"><span class="dot"></span><span class="topic-name">Worm</span><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></li>
+                </ul>
+            </div>
+
+            <!-- FAQ -->
+            <div class="widget-box faq-box">
+                <h2 class="faq-title">FAQ</h2>
+                <div class="faq-list" id="faqList">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                            <svg class="faq-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">Jawaban akan muncul di sini.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                            <svg class="faq-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">Jawaban akan muncul di sini.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                            <svg class="faq-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">Jawaban akan muncul di sini.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</span>
+                            <svg class="faq-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">Jawaban akan muncul di sini.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 class="text-title3">Diskusi Baru</h2>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="modal-input" placeholder="Judul diskusi...">
+                <textarea class="modal-textarea" placeholder="Ceritakan temuanmu..."></textarea>
+                <button class="modal-submit">Kirim Diskusi</button>
+            </div>
+        </div>
+    </div>
+
+    <script>window.componentDepth = '../../../';</script>
+    <script src="../../../js/components.js"></script>
+    <script src="forum.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="../../../styles/tokens.css">
+    <link rel="stylesheet" href="../../../styles/typography.css">
+    <link rel="stylesheet" href="../../../styles/components.css">
+    <link rel="stylesheet" href="../../../components/navbar/style.css">
+    <link rel="stylesheet" href="animate.css">
+
+</head>
+<body>
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+    <div class="glow glow--3"></div>
+    <div id="navbar"></div>
+
+    <div class="profile-title fade-down" style="animation-delay: 0s;">
+        <h1 class="text-xl-title1">Profile.</h1>
+    </div>
+    <div class="profile-content">
+
+        <div class="profile-info fade-scale" style="animation-delay: 0s;">
+            <div class="profile-card">
+                <!-- Avatar -->
+                <div class="profile-avatar">
+                    <img src="../../../assets/images/avatar.png" alt="Profile Picture">
+                </div>
+
+                <!-- Detail -->
+                <div class="profile-detail">
+                    <h2 class="text-large-title">John Doe</h2>
+
+                    <div class="profile-meta">
+                        <div class="profile-meta-item">
+                            <img src="/assets/images/mail.png" alt="email">
+                            <span class="text-subhead">JohnDoe@gmail.com</span>
+                        </div>
+                        <div class="profile-meta-item">
+                            <img src="/assets/images/phone.png" alt="phone">
+                            <span class="text-subhead">+62 812-4925-1237</span>
+                        </div>
+                        <div class="profile-meta-item">
+                            <img src="/assets/images/job.png" alt="job">
+                            <span class="text-subhead">UI/UX Designer</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="history-content fade-in" style="animation-delay: 0s;">
+
+            <!-- Header & Filter -->
+            <div class="history-header">
+                <h2 class="text-xl-title2" style="color: var(--color-text-black);">History</h2>
+                <div class="history-filter">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Safe</button>
+                    <button class="filter-btn">Medium</button>
+                    <button class="filter-btn">High</button>
+                </div>
+            </div>
+
+            <!-- List -->
+            <div class="history-list-wrapper">
+                <div class="history-list" id="historyList">
+
+                <div class="history-card" data-status="safe">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--safe">Safe</span>
+                            <span class="text-caption" style="color: var(--color-shading);">1 hours ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="high">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--high">High</span>
+                            <span class="text-caption" style="color: var(--color-shading);">3 day ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="medium">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--medium">Medium</span>
+                            <span class="text-caption" style="color: var(--color-shading);">7 day ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="high">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--high">High</span>
+                            <span class="text-caption" style="color: var(--color-shading);">1 month ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="high">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--high">High</span>
+                            <span class="text-caption" style="color: var(--color-shading);">1 month ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+                <div class="history-card" data-status="high">
+                    <div class="history-card-main">
+                        <div class="history-card-text">
+                            <span class="text-headline" style="color: var(--color-text-black);">Lorem ipsum</span>
+                            <span class="text-subhead" style="color: var(--color-shading);">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                        </div>
+                        <div class="history-card-meta">
+                            <span class="text-subheadline badge--high">High</span>
+                            <span class="text-caption" style="color: var(--color-shading);">1 month ago</span>
+                        </div>
+                    </div>
+                    <span class="history-card-arrow">›</span>
+                </div>
+
+            </div>
+            <div class="custom-scrollbar" id="customScrollbar">
+                <div class="custom-thumb" id="scrollThumb"></div>
+            </div>
+            </div>
+            
+        </div>
+
+    </div>
+    <script src="../../../js/utils.js"></script>
+    <script>
+        window.componentDepth = '../../../';
+    </script>
+    <script src="../../../js/components.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
