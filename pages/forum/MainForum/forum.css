@@ -1,0 +1,526 @@
+/* ==========================================================================
+   forum.css — pixel-perfect match to Figma design
+   Semua warna & font dari tokens.css
+   ========================================================================== */
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-primary);
+    color: var(--color-text-white);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Background Glows
+   ========================================================================== */
+.glow {
+    position: fixed;
+    width: 1200px; height: 1200px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+.glow--1 {
+    background: radial-gradient(circle, rgba(15, 98, 254, 0.06) 0%, transparent 60%);
+    top: -30%; right: -20%;
+}
+.glow--2 {
+    background: radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 55%);
+    top: 20%; left: -30%;
+}
+
+/* ==========================================================================
+   Main Layout — 2 kolom, proporsi sesuai desain
+   ========================================================================== */
+.forum-main-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Left column: kartu diskusi — lebih lebar */
+.forum-left-column {
+    flex: 0 0 640px;   /* fixed width sesuai desain ~640px */
+    min-width: 0;
+}
+
+/* Right column: sidebar — lebih sempit */
+.forum-right-column {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 88px;
+}
+
+/* ==========================================================================
+   Forum Header
+   ========================================================================== */
+.forum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* "Forum." — text-xl-title1 dari typography.css, tidak perlu re-declare */
+
+/* Dropdown */
+.dropdown-filter {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--color-shading);
+    border-radius: 6px;
+    padding: 8px 36px 8px 14px;
+    font-family: var(--font-primary);
+    font-size: var(--text-footnote);
+    line-height: var(--leading-footnote);
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236F6F6F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+.dropdown-filter:hover  { border-color: rgba(255,255,255,0.2); }
+.dropdown-filter option { background-color: var(--color-bg); }
+
+/* ==========================================================================
+   Glass Card Base
+   ========================================================================== */
+.discussion-card,
+.widget-box {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+/* ==========================================================================
+   Discussion List
+   ========================================================================== */
+.discussion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.discussion-card {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    animation: cardIn 0.35s ease both;
+}
+.discussion-card:hover {
+    border-color: rgba(255,255,255,0.14);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.discussion-list .discussion-card:nth-child(1) { animation-delay: 0.04s; }
+.discussion-list .discussion-card:nth-child(2) { animation-delay: 0.08s; }
+.discussion-list .discussion-card:nth-child(3) { animation-delay: 0.12s; }
+.discussion-list .discussion-card:nth-child(4) { animation-delay: 0.16s; }
+.discussion-list .discussion-card:nth-child(5) { animation-delay: 0.20s; }
+.discussion-list .discussion-card:nth-child(6) { animation-delay: 0.24s; }
+
+/* --- Card Top --- */
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.user-meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;  /* avatar & teks sejajar tengah */
+}
+
+/* Avatar: 64×64 sesuai desain */
+.avatar-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #D9D9D9;
+    flex-shrink: 0;
+}
+.avatar-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+}
+.avatar-empty { background-color: #D9D9D9; }
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+}
+
+.name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+/* Nama user — bold, putih */
+.user-name {
+    font-family: var(--font-primary);
+    font-size: var(--text-subheadline);   /* 14px */
+    line-height: var(--leading-subheadline);
+    font-weight: var(--font-bold);
+    color: var(--color-text-white);
+}
+
+/* Tanggal — kecil, abu */
+.user-date {
+    font-family: var(--font-primary);
+    font-size: var(--text-caption);       /* 12px */
+    line-height: var(--leading-caption);
+    font-weight: var(--font-regular);
+    color: var(--color-shading);
+}
+
+/* Status italic di bawah nama */
+.status-text {
+    font-family: var(--font-primary);
+    font-size: var(--text-caption);       /* 12px */
+    line-height: var(--leading-caption);
+    font-weight: var(--font-regular);
+    color: var(--color-shading);
+    font-style: italic;
+}
+
+.action-menu {
+    background: none;
+    border: none;
+    color: var(--color-text-white);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+.action-menu:hover { background: rgba(255,255,255,0.07); }
+
+/* --- Card Body --- */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Teks body — sesuai desain: 14px, putih agak redup */
+.body-text {
+    font-family: var(--font-primary);
+    font-size: var(--text-subheadline);   /* 14px */
+    line-height: var(--leading-subheadline);
+    font-weight: var(--font-regular);
+    color: var(--color-text-white);
+    opacity: 0.85;
+    margin: 0;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: 200px;
+    display: block;
+}
+
+/* --- Card Footer --- */
+.card-footer {
+    display: flex;
+    justify-content: flex-end;   /* rata kanan sesuai desain */
+    align-items: center;
+    gap: 16px;
+}
+
+/* Overlapping avatars */
+.participant-group {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-sm {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #2B2B2B;
+    background-color: #D9D9D9;
+    margin-left: -10px;
+    object-fit: cover;
+    display: block;
+}
+.avatar-sm:first-child { margin-left: 0; }
+
+.avatar-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #161616;
+    color: var(--color-text-white);
+    font-size: 9px;
+    font-weight: var(--font-bold);
+}
+
+.reply-count {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-shading);
+    font-family: var(--font-primary);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+    font-weight: var(--font-regular);
+}
+
+/* ==========================================================================
+   Sidebar — Right Column
+   ========================================================================== */
+
+/* "Start New Discussion" button — full width, biru */
+.btn-start {
+    background-color: var(--color-btn-primary);
+    color: var(--color-text-white);
+    font-family: var(--font-primary);
+    font-size: var(--text-subhead);
+    line-height: var(--leading-subhead);
+    font-weight: var(--font-medium);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    letter-spacing: var(--tracking-normal);
+}
+.btn-start:hover  { opacity: 0.88; transform: translateY(-1px); }
+.btn-start:active { transform: translateY(0); }
+
+/* Topics widget */
+.topic-list {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: var(--color-shading);
+    padding: 5px 6px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+    user-select: none;
+}
+.topic-item:hover { background: rgba(255,255,255,0.04); color: var(--color-text-white); }
+
+.dot {
+    width: 7px; height: 7px;
+    background-color: #444;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+/* topic-name menggunakan text-footnote dari HTML */
+.topic-name { flex: 1; }
+
+.check-icon {
+    display: none;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+/* Active topic */
+.topic-item.active .dot        { background-color: var(--color-primary); }
+.topic-item.active .topic-name { color: var(--color-primary); font-weight: var(--font-bold); }
+.topic-item.active .check-icon { display: block; }
+
+/* FAQ */
+.faq-title {
+    color: var(--color-text-white);
+    margin: 0 0 14px 0;
+}
+
+.faq-list { display: flex; flex-direction: column; }
+
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.faq-item:last-child { border-bottom: none; }
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--color-text-white);
+    font-family: var(--font-primary);
+    font-size: var(--text-footnote);
+    line-height: var(--leading-footnote);
+    font-weight: var(--font-regular);
+    text-align: left;
+    padding: 12px 0;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+.faq-question:hover { opacity: 1; }
+
+.faq-arrow {
+    flex-shrink: 0;
+    color: var(--color-shading);
+    transition: transform 0.25s ease;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+.faq-answer {
+    font-family: var(--font-primary);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+    color: var(--color-shading);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+    padding-bottom: 0;
+}
+.faq-item.open .faq-answer {
+    max-height: 200px;
+    padding-bottom: 12px;
+}
+
+/* ==========================================================================
+   Modal — New Discussion
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: #1c1c1c;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    width: min(560px, 92vw);
+    padding: 32px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    transform: translateY(16px);
+    transition: transform 0.25s ease;
+}
+.modal-overlay.show .modal-box { transform: translateY(0); }
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.modal-header h2 {
+    margin: 0;
+    color: var(--color-text-white);
+    font-family: var(--font-primary);
+    font-size: var(--text-title3);
+    line-height: var(--leading-title3);
+    font-weight: var(--font-bold);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--color-shading);
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 4px;
+}
+.modal-close:hover { color: var(--color-text-white); }
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modal-input,
+.modal-textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    color: var(--color-text-white);
+    font-family: var(--font-primary);
+    font-size: var(--text-footnote);
+    line-height: var(--leading-footnote);
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+.modal-input:focus,
+.modal-textarea:focus { border-color: rgba(15,98,254,0.5); }
+.modal-input::placeholder,
+.modal-textarea::placeholder { color: var(--color-shading); }
+.modal-textarea { resize: vertical; min-height: 120px; }
+
+.modal-submit {
+    background-color: var(--color-btn-primary);
+    color: var(--color-text-white);
+    font-family: var(--font-primary);
+    font-size: var(--text-subhead);
+    line-height: var(--leading-subhead);
+    font-weight: var(--font-medium);
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin-top: 4px;
+}
+.modal-submit:hover { opacity: 0.88; }
