@@ -119,28 +119,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3D effect for hero-bug
+  // 3D parallax effect untuk hero-bug img
+  // Wrapper (.hero-bug-wrapper) menangani floatBug animation
+  // Img (.hero-bug) menangani rotasi 3D dari mouse — transform tidak konflik
   if (sectionHero && heroBug) {
 
-      sectionHero.addEventListener('mousemove', (e) => {
+    sectionHero.addEventListener('mousemove', (e) => {
       const rect = sectionHero.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
-      
       const offsetX = (e.clientX - centerX) / (rect.width / 2);
       const offsetY = (e.clientY - centerY) / (rect.height / 2);
 
-      
       const rotateX = -offsetY * 40;
       const rotateY =  offsetX * 40;
 
       heroBug.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
     });
 
-    // Reset mouse
+    // Reset: kosongkan inline style agar transition CSS smooth kembali ke neutral
     sectionHero.addEventListener('mouseleave', () => {
-      heroBug.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      heroBug.style.transform = '';
     });
   }
 
