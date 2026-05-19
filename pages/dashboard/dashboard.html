@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../../styles/typography.css">
   <link rel="stylesheet" href="../../components/navbar/style.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animate.css">
   <link rel="preload" as="image" href="../../assets/images/dashboard/Logo.png">
 </head>
 <body>
@@ -23,24 +24,41 @@
     <!-- (Hero Section) -->
     <section class="section-hero">
       <div class="hero-content">
-        <h3 class="hero-year text-primary text-title1">Since 2026</h3>
-        
-        <!-- Dibuat tanpa max-width sempit agar menjadi satu line -->
+
+        <h3 class="hero-year text-primary text-title1 fade-down"
+            style="animation-delay: 0s;">
+          Since 2026
+        </h3>
+
         <div class="hero-heading-container">
-          <div class="hero-heading-row1">
+          <div class="hero-heading-row1 fade-down"
+            style="animation-delay: 0.15s;">
             <h1 class="text-white text-xl-title1">Bantu kamu untuk terhindar dari penipuan</h1>
           </div>
-          <div class="hero-heading-row2">
+          <div class="hero-heading-row2 fade-down"
+            style="animation-delay: 0.3s;">
             <img src="../../assets/images/dashboard/Logo.png" alt="Logo Cek Tipu" class="hero-inline-logo" width="120" height="60" decoding="sync">
             <h1 class="text-white text-xl-title1">dulu sebelum akses!</h1>
           </div>
         </div>
-        
-        <p class="hero-subheading text-gray text-title3">Cek pdf, dokumen, zip, file, link, semuanya!</p>
-        
-        <button class="btn-outline-primary text-headline" id="btn-hero-mulai">Mulai Pengecekan</button>
-        
-        <img src="../../assets/images/dashboard/Bug Assets.png" alt="Bug Illustration" class="hero-bug">
+
+        <p class="hero-subheading text-gray text-title3 fade-in"
+       style="animation-delay: 0.45s;">
+      Cek pdf, dokumen, zip, file, link, semuanya!
+        </p>
+
+        <button class="btn-outline-primary text-headline fade-in"
+            style="animation-delay: 0.6s;"
+            id="btn-hero-mulai">
+          Mulai Pengecekan
+        </button>
+
+        <div class="hero-bug-wrapper hero-bug-entrance hero-bug-float"
+          style="animation-delay: 0.75s;">
+          <img src="../../assets/images/dashboard/Bug Assets.png"
+            alt="Bug Illustration"
+            class="hero-bug">
+        </div>
       </div>
     </section>
 

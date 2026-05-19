@@ -10,13 +10,13 @@
 }
 
 .fade-down {
-    animation: fadeDown 1s ease-out forwards;
+    animation: fadeDown 0.7s ease-out both;
 }
 
 @keyframes fadeScale {
     from {
         opacity: 0;
-        transform: scale(0.75);
+        transform: scale(0.95);
     }
     to {
         opacity: 1;
@@ -25,7 +25,7 @@
 }
 
 .fade-scale {
-    animation: fadeScale 1s ease-out forwards;
+    animation: fadeScale 0.7s ease-out both;
 }
 
 @keyframes fadeScalesDivider {
@@ -34,19 +34,19 @@
         transform: scale(0.25);
     }
     to {
-        opacity: 1;
+        opacity: 0.5;
         transform: scale(1);
     }
 }
 
 .fade-scale-divider {
-    animation: fadeScalesDivider 1.215s ease-out forwards;
+    animation: fadeScalesDivider 0.7s ease-out both;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(32px);
     }
     to {
         opacity: 1;
@@ -55,5 +55,5 @@
 }
 
 .fade-in {
-    animation: fadeIn 1s ease-out forwards;
+    animation: fadeIn 0.7s ease-out both;
 }

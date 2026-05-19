@@ -136,8 +136,14 @@ body {
   background: rgba(15, 98, 254, 0.1);
 }
 
+.hero-bug-wrapper {
+  margin-top: 80px;
+  display: inline-block; /* Bungkus img dengan ketat */
+  line-height: 0;        /* Hapus whitespace bawaan inline */
+}
+
 .hero-bug {
-  margin-top: 80px; /* Renggang ke bawah */
+  display: block;
   width: 100%;
   max-width: 500px;
   object-fit: contain;
