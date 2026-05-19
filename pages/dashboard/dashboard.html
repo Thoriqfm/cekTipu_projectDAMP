@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../components/navbar/style.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="animate.css">
-  <link rel="preload" as="image" href="../../assets/images/dashboard/Logo.png">
+  <link rel="preload" as="image" href="../../assets/images/dashboard/Logo.svg">
 </head>
 <body>
   <!-- Latar belakang absolut (tidak fixed) agar ikut bergulir dan terpotong -->
@@ -18,7 +18,21 @@
     <img src="../../assets/images/dashboard/Lingkaran.svg" alt="" class="bg-lingkaran bg-lingkaran-right">
   </div>
 
-  <div id="navbar"></div>
+  <nav class="navbar">
+    <a href="/pages/dashboard/dashboard.html" class="navbar-brand">
+        <img src="/assets/images/Logo.svg" alt="Cek Tipu Logo">
+    </a>
+    <ul class="navbar-links">
+        <li><a href="/pages/dashboard/dashboard.html">Homepage</a></li>
+        <li><a href="/pages/forum/MainForum/Forum.html">Forum</a></li>
+        <li><a href="/pages/subscription/subcription.html">Subscription</a></li>
+        <li><a href="/pages/profile/main/profile.html">Profile</a></li>
+    </ul>
+
+    <div class="navbar-sigin">
+        <a href="/pages/auth/signin/signin.html" class="btn-signin">Sign In</a>
+    </div>
+  </nav>
 
   <main class="dashboard-container">
     <!-- (Hero Section) -->
@@ -37,7 +51,7 @@
           </div>
           <div class="hero-heading-row2 fade-down"
             style="animation-delay: 0.3s;">
-            <img src="../../assets/images/dashboard/Logo.png" alt="Logo Cek Tipu" class="hero-inline-logo" width="120" height="60" decoding="sync">
+            <img src="../../assets/images/dashboard/Logo.svg" alt="Logo Cek Tipu" class="hero-inline-logo" width="120" height="60" decoding="sync">
             <h1 class="text-white text-xl-title1">dulu sebelum akses!</h1>
           </div>
         </div>
@@ -55,7 +69,7 @@
 
         <div class="hero-bug-wrapper hero-bug-entrance hero-bug-float"
           style="animation-delay: 0.75s;">
-          <img src="../../assets/images/dashboard/Bug Assets.png"
+          <img src="../../assets/images/dashboard/Bug Assets.svg"
             alt="Bug Illustration"
             class="hero-bug">
         </div>

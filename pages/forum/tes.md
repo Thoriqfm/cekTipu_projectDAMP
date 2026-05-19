@@ -1,1 +1,0 @@
-ascar jomok

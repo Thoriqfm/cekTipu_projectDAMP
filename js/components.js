@@ -1,7 +1,9 @@
 async function loadComponent(selector, filePath) {
+  const el = document.querySelector(selector);
+  if (!el) return;
   const res = await fetch(filePath);
   const html = await res.text();
-  document.querySelector(selector).innerHTML = html;
+  el.innerHTML = html;
 }
 
 async function initComponents() {
