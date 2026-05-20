@@ -68,5 +68,5 @@ signinBtn.addEventListener('click', () => {
     if (hasError) return;
 
     // Redirect ke dashboard
-    window.location.href = '../../../pages/dashboard/index.html';
+    window.location.href = '../../../pages/dashboard/dashboard.html';
 });
